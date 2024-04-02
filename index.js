@@ -3,6 +3,7 @@ const modalEl = document.getElementById("modal")
 const modalCloseBtn = document.getElementById("modal-close-btn")
 const consentForm = document.getElementById("consent-form")
 const modalText = document.getElementById("modal-text")
+const modalInner = document.getElementById("modal-inner")
 
 
 
@@ -29,6 +30,14 @@ consentForm.addEventListener("submit", function(event) {
         paragraphText.textContent = "Making the sale..."
         
     }, 1500)
+    setTimeout(function() {
+        modalInner.innerHTML = `<h2>Thanks you sucker! </h2>
+        <p>We just sold the rights to your eternal soul.</p>
+        <div class="idiot-gif">
+            <img src="images/pirate.gif">
+        </div>
+        ` 
+    }, 3000)
 })
 
 function loadingDiv() {
