@@ -24,6 +24,11 @@ consentForm.addEventListener("submit", function(event) {
     event.preventDefault();
     loadingDiv()
     console.log("Form Submitted")
+    const paragraphText = document.getElementById("upload-text")
+    setTimeout(function() {
+        paragraphText.textContent = "Making the sale..."
+        
+    }, 1500)
 })
 
 function loadingDiv() {
@@ -35,7 +40,7 @@ function loadingDiv() {
     mainDiv.appendChild(loadingImage)
     const paragraphText = document.createElement('p')
     paragraphText.textContent = "Uploading your data to the dark web..."
-    paragraphText.id = "uploadText"
+    paragraphText.id = "upload-text"
     mainDiv.appendChild(paragraphText)
     modalText.innerHTML = "";
     modalText.appendChild(mainDiv)
