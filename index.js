@@ -26,12 +26,18 @@ consentForm.addEventListener("submit", function(event) {
     loadingDiv()
     console.log("Form Submitted")
     const paragraphText = document.getElementById("upload-text")
+
+    const consentFormData = new FormData(consentForm);
+    console.log(consentFormData)
+
+    const name = consentFormData.get("personName")
+
     setTimeout(function() {
         paragraphText.textContent = "Making the sale..."
         
     }, 1500)
     setTimeout(function() {
-        modalInner.innerHTML = `<h2>Thanks you sucker! </h2>
+        modalInner.innerHTML = `<h2>Thanks <span class="modal-display-name">${name}</span>, you sucker!</h2>
         <p>We just sold the rights to your eternal soul.</p>
         <div class="idiot-gif">
             <img src="images/pirate.gif">
